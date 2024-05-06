@@ -13,6 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
-    return view('home');
-});
+    $message = [
+        'heading' => 'Home Page',
+        'message' => 'Welcome to the homepage..'
+    ];
+    return view('home', $message);
+})->name('home');
+
+Route::get('/about', function () {
+    $message = [
+        'heading' => 'About Page',
+        'message' => 'You are now on the about page..'
+    ];
+    return view('about', $message);
+})->name('about');
